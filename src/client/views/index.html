@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>NLO Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body>
+  <body>
+    <header>
+      <div class="header">
+        <img class="logo" src="" alt="nlp project" width="100" />
+        <div class="title">NLP Project</div>
+      </div>
+    </header>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+    <main>
+      <section class="form-section">
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+          <textarea
+            class="text-input"
+            name="input"
+            placeholder="What's happening?"
+          ></textarea>
+          <button
+            class="post-btn"
+            onclick="return Client.handleSubmit(event)"
+            onsubmit="return Client.handleSubmit(event)"
+          >
+            Send
+          </button>
+        </form>
+      </section>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
+      <section class="result-container">
+        <h1>Analysis Result</h1>
+        <div class="slider slider-2" id="agreement">
+          <div class="circle"><span>Agreement</span></div>
+          <div class="line"></div>
+          <div class="circle"><span>Disagreement</span></div>
+        </div>
+        <div class="slider slider-2" id="subjectivity">
+          <div class="circle"><span>Objective</span></div>
+          <div class="line"></div>
+          <div class="circle"><span>Subjective</span></div>
+        </div>
+        <div class="slider slider-2" id="irony">
+          <div class="circle"><span>Non Ironic</span></div>
+          <div class="line"></div>
+          <div class="circle"><span>Ironic</span></div>
+        </div>
+        <div class="slider slider-n" id="confidence">
+          <div class="line-back"></div>
+          <div class="line-front">
+            <span class="label">Confidence : 0</span>
+          </div>
+        </div>
+      </section>
+    </main>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-
-            <button class="get-user">
-                Get User
-            </button>
-
-            <div class="user-details">
-                This is test class
-            </div>
-
-
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-        <script>
+    <footer>
+      <p>
+        Part of
+        <a
+          href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011"
+          >@Udacity</a
+        >
+        Front-End Developer Nanodegree
+      </p>
+    </footer>
+    <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
               // Use the window load event to keep the page load performant
@@ -51,6 +80,6 @@
                 navigator.serviceWorker.register('/service-worker.js');
               });
             }
-            </script>
-    </body>
+            </script> -->
+  </body>
 </html>

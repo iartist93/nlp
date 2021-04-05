@@ -26,6 +26,12 @@ module.exports = {
         loader: "babel-loader",
       },
       {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "url-loader",
+        },
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // right to left
       },
@@ -46,7 +52,7 @@ module.exports = {
       protectWebpackAssets: false,
     }),
     new MiniCssExtractPlugin(),
-    new WorkboxPlugin.GenerateSW(),
+    // new WorkboxPlugin.GenerateSW(),
   ],
   optimization: {
     minimize: true,
