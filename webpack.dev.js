@@ -8,6 +8,12 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   stats: "verbose",
+  output: {
+    libraryTarget: "var",
+    library: "Client",
+    // filename: "main.js",
+    // path: path.resolve(__dirname, "dist"),
+  },
   module: {
     rules: [
       {

@@ -10,4 +10,21 @@ import "./styles/header.scss";
 console.log(checkForName);
 console.log("CHANGE!!");
 
-alert("I EXIST");
+// alert("I EXIST");
+
+const btn = document.querySelector(".get-user");
+const testDiv = document.querySelector(".user-details");
+
+btn.addEventListener("click", async () => {
+  const result = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const content = await result.json();
+  console.log(content);
+  testDiv.innerHTML = content.title;
+});
+
+testDiv.addEventListener("click", () => {
+  console.log("clicked");
+  testDiv.innerHTML = "Clicked here";
+});
+
+export { checkForName, handleSubmit };
