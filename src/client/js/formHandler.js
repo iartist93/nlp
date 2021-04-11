@@ -1,10 +1,39 @@
 import postData from "./postData";
 
+const handleChange = (event) => {
+  const text = event.target.value;
+
+  const textArea = document.querySelector(".text-input");
+  console.log(textArea.value);
+
+  const sendBtn = document.querySelector(".post-btn");
+  if (text.length > 20) {
+    sendBtn.disabled = false;
+  } else {
+    sendBtn.disabled = true;
+  }
+
+  const counter = document.querySelector(".counter");
+  const left = 20 - text.length;
+
+  // min = 0, max = 20
+  // stroke min = 7, max = 59
+  // linar interpolation
+  const precentage = left * 2.6 + 7;
+
+  counter.innerHTML = left >= 0 ? left : "";
+};
+
 const handleSubmit = async (event) => {
   event.preventDefault();
 
   // TODO:: check what text was put into the form field
   const formText = document.querySelector(".text-input").value;
+
+  // easy validatation that the text length > 20
+  // TODO: Implement more advanced validation
+  if (formText.length < 20) return;
+
   const data = { text: formText };
 
   // Client.checkForName(formText);
@@ -54,4 +83,4 @@ const handleSubmit = async (event) => {
     (parseInt(confidence) / 100) * 295 + "px";
 };
 
-export { handleSubmit };
+export { handleSubmit, handleChange };

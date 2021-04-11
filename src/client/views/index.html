@@ -25,11 +25,26 @@
             class="text-input"
             name="input"
             placeholder="What's happening?"
+            oninput="Client.handleChange(event)"
           ></textarea>
+          <div class="counter">20</div>
+          <svg height="100" width="100">
+            <circle
+              cx="50%"
+              cy="50%"
+              r="9"
+              stroke="#1DA1F2"
+              stroke-linecap="round"
+              stroke-width="2"
+              fill="none"
+              style="stroke-dashoffset: 59; stroke-dasharray: 60"
+            />
+          </svg>
+
           <button
             class="post-btn"
             onclick="return Client.handleSubmit(event)"
-            onsubmit="return Client.handleSubmit(event)"
+            disabled
           >
             Send
           </button>

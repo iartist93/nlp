@@ -30,6 +30,15 @@ form {
     vertical-align: middle;
     padding-top: 20px;
     padding-left: 10px;
+    resize: none;
+  }
+
+  .counter {
+    color: rgb(158, 160, 172);
+    font-weight: 600;
+    position: relative;
+    right: -48%;
+    bottom: 42px;
   }
 
   .post-btn {
@@ -50,6 +59,15 @@ form {
 
     &:focus {
       transform: translate(3px, 3px);
+    }
+
+    &:disabled {
+      color: #babebe;
+      border: 3px solid rgb(110, 110, 110);
+
+      &:hover {
+        background-color: white;
+      }
     }
   }
 }

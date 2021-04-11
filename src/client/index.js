@@ -1,5 +1,5 @@
 import { checkForName } from "./js/nameChecker";
-import { handleSubmit } from "./js/formHandler";
+import { handleSubmit, handleChange } from "./js/formHandler";
 
 import "./styles/resets.scss";
 import "./styles/base.scss";
@@ -12,4 +12,4 @@ import logo from "./images/logo2.png";
 
 document.querySelector(".logo").src = logo;
 
-export { checkForName, handleSubmit };
+export { checkForName, handleSubmit, handleChange };
