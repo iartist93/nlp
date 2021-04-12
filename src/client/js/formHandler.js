@@ -36,10 +36,15 @@ const handleSubmit = async (event) => {
 
   const data = { text: formText };
 
-  // Client.checkForName(formText);
-  // console.log("::: Form Submitted :::");
-
   const res = await postData("/analysis", data);
+
+  // show the result container
+  const resultContainer = document.querySelector(".result-container");
+  resultContainer.style.display = "flex";
+
+  // resize the text input
+  const textInput = document.querySelector(".text-input-container");
+  textInput.style.width = "100%";
 
   const agreement = res.agreement;
   const subjectivity = res.subjectivity;

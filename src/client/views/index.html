@@ -21,14 +21,16 @@
     <main>
       <section class="form-section">
         <form class="" onsubmit="return Client.handleSubmit(event)">
-          <textarea
-            class="text-input"
-            name="input"
-            placeholder="What's happening?"
-            oninput="Client.handleChange(event)"
-          ></textarea>
-          <div class="counter">20</div>
-          <svg height="100" width="100">
+          <div class="text-input-container">
+            <textarea
+              class="text-input"
+              name="input"
+              placeholder="What's happening?"
+              oninput="Client.handleChange(event)"
+            ></textarea>
+            <div class="counter">20</div>
+          </div>
+          <!-- <svg height="100" width="100">
             <circle
               cx="50%"
               cy="50%"
@@ -39,7 +41,7 @@
               fill="none"
               style="stroke-dashoffset: 59; stroke-dasharray: 60"
             />
-          </svg>
+          </svg> -->
 
           <button
             class="post-btn"

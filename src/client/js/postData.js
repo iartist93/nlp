@@ -15,9 +15,6 @@ const postData = async (url = "", data = {}) => {
       body: JSON.stringify(data),
     });
 
-    console.log(data);
-    console.log(JSON.stringify(data));
-
     return await response.json();
   } catch (error) {
     console.error(`postData error : ${error.message}`);
