@@ -1,4 +1,5 @@
 import postData from "./postData";
+import { validURL } from "./utils";
 
 const handleChange = (event) => {
   const text = event.target.value;
@@ -29,17 +30,28 @@ const handleSubmit = async (event) => {
 
   // TODO:: check what text was put into the form field
   const formText = document.querySelector(".text-input").value;
+  const errorMessage = document.querySelector(".error-message");
+  const resultContainer = document.querySelector(".result-container");
+  const textInputConainer = document.querySelector(".text-input-container");
 
-  // easy validatation that the text length > 20
-  // TODO: Implement more advanced validation
-  if (formText.length < 20) return;
+  if (
+    (formText.includes("http") && !validURL(formText)) ||
+    formText.length < 20
+  ) {
+    errorMessage.style.display = "block";
+    resultContainer.style.display = "none";
+    textInputConainer.style.width = "60%";
+    return;
+  } else {
+    errorMessage.style.display = "none";
+    textInputConainer.style.width = "100%";
+  }
 
   const data = { text: formText };
 
-  const res = await postData("/analysis", data);
+  const res = await postData("http://localhost:8081/analysis", data);
 
   // show the result container
-  const resultContainer = document.querySelector(".result-container");
   resultContainer.style.display = "flex";
 
   // resize the text input

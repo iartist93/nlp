@@ -52,7 +52,7 @@ module.exports = {
       protectWebpackAssets: false,
     }),
     new MiniCssExtractPlugin(),
-    // new WorkboxPlugin.GenerateSW(),
+    new WorkboxPlugin.GenerateSW(),
   ],
   optimization: {
     minimize: true,
