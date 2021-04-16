@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mockAPIResponse = require("./mockAPI.js");
 const dotenv = require("dotenv");
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
 
@@ -15,6 +16,7 @@ console.log(__dirname);
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(express.static("dist"));
 

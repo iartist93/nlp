@@ -8,6 +8,7 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   stats: "verbose",
+  target: "node",
   output: {
     libraryTarget: "var",
     library: "Client",
